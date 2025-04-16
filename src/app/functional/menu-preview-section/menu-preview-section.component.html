@@ -1,0 +1,18 @@
+<section class="menu-preview" motionInit>
+    <h2 motionAnimate="fadeInUp">Our Bestsellers</h2>
+  
+    <div class="scroll-wrapper">
+      <div class="menu-items horizontal-scroll">
+        <div
+          *ngFor="let item of loopedBestsellers"
+          class="menu-card"
+          motionAnimate="slideInLeft"
+          attr.motionDelay="{{ item.delay }}"
+        >
+          <img [src]="item.image" [alt]="item.title" />
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </section>

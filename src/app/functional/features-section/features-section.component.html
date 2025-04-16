@@ -1,0 +1,9 @@
+<section class="py-16 px-6 text-center flex flex-col gap-8" motionInit>
+    <div *ngFor="let feature of features" class="bg-white p-8 rounded-xl justify-center flex-col flex items-center shadow-lg mt-8"
+         [attr.motionAnimate]="'fadeIn'" [attr.motionDelay]="feature.delay">
+      <img [src]="feature.image" alt="{{ feature.title }}" class="w-48 h-48 mb-4 mx-auto" />
+      <h3 class="text-xl font-semibold text-orange-600 mb-2">{{ feature.title }}</h3>
+      <p class="text-gray-600">{{ feature.description }}</p>
+    </div>
+  </section>
+  

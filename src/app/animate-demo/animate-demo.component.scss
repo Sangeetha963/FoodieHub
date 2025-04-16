@@ -1,0 +1,103 @@
+// Variables (you can adjust colors/fonts as needed)
+$primary-color: #ff7f50;
+$secondary-color: #333;
+$background-color: #fff;
+$accent-color: #f3f3f3;
+$text-color: #444;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+* {
+  // margin: 0;
+  // padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-stack;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+// HEADER
+.header {
+  background-color: $primary-color;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  nav a {
+    color: white;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffe6d9;
+    }
+  }
+}
+
+// HERO SECTION
+.hero {
+  background: url('/assets/icons/hero-food.png') center/cover no-repeat;
+  color: white;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4rem;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+
+  .cta{
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    background-color: white;
+    color: $primary-color;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: #ffe6d9;
+    }
+  }
+}
+
+
+
+
+  
+
+
+// FOOTER
+.footer {
+  background-color: $secondary-color;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+}

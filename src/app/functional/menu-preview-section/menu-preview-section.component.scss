@@ -1,0 +1,66 @@
+// MENU SECTION
+.menu-preview {
+    padding: 4rem 2rem;
+    text-align: center;
+  
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #333;
+    }
+  
+    .scroll-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+    
+    .menu-items.horizontal-scroll {
+      display: flex;
+      width: max-content;
+      animation: scrollLeft 40s linear infinite;
+    
+      .menu-card {
+        flex: 0 0 auto;
+        width: 250px;
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-right: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    
+        img {
+          width: 100%;
+          height: 160px;
+          object-fit: cover;
+          border-radius: 10px;
+          margin-bottom: 1rem;
+        }
+    
+        h4 {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          color: #ff7f50;
+        }
+    
+        p {
+          font-size: 0.9rem;
+          color: #666;
+        }
+    
+        &:hover {
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0);
+      }
+    
+      100% {
+        transform: translateX(-50%);
+      }
+    }
