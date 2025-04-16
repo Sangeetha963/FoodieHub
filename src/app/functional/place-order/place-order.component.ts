@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
-import { animate, inView } from 'motion';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-animate-demo',
-  templateUrl: './animate-demo.component.html',
-  styleUrls: ['./animate-demo.component.scss']
+  selector: 'app-place-order',
+  templateUrl: './place-order.component.html',
+  styleUrls: ['./place-order.component.scss']
 })
-export class AnimateDemoComponent {
-  constructor(public router: Router) {}
-
-  showBox = false;
+export class PlaceOrderComponent {
   bestsellers = [
     {
       title: 'Margherita Pizza',
@@ -61,19 +56,44 @@ export class AnimateDemoComponent {
       delay: '0.4s'
     }
   ];
-  
-  loopedBestsellers = [...this.bestsellers, ...this.bestsellers];
 
-  toggleAnimation() {
-    this.showBox = !this.showBox;
+  selectedItems: any[] = [];
+
+  order = {
+    name: '',
+    phone: '',
+    notes: '',
+  };
+
+  isSelected(item: any): boolean {
+    return this.selectedItems.includes(item);
   }
-  ngAfterViewInit(): void {
-    inView('.testimonial', (element) => {
-      animate(element, { opacity: 1, transform: 'translateY(0)' }, { duration: 0.6 });
-    });
-    
+
+  toggleSelection(item: any): void {
+    if (this.isSelected(item)) {
+      this.selectedItems = this.selectedItems.filter((i) => i !== item);
+    } else {
+      this.selectedItems.push(item);
+    }
   }
-  get isHomeRoute(): boolean {
-    return this.router.url === '/';
+
+  submitOrder(): void {
+    if (!this.order.name || !this.order.phone || this.selectedItems.length === 0) {
+      alert('Please fill all details and select at least one item.');
+      return;
+    }
+
+    const payload = {
+      ...this.order,
+      items: this.selectedItems.map((i) => i.title),
+    };
+
+    // Simulate submission
+    console.log('Order submitted:', payload);
+    alert('Thank you for your order!');
+
+    // Reset form
+    this.order = { name: '', phone: '', notes: '' };
+    this.selectedItems = [];
   }
 }

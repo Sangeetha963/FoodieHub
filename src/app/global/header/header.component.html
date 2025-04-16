@@ -1,11 +1,9 @@
 <header class="flex justify-between items-center px-6 py-4 bg-white shadow-md">
     <h1 class="text-2xl font-bold text-orange-600">FoodieHub</h1>
     <nav id="navLinks" class="flex space-x-6">
-      <a *ngFor="let item of navItems"
-         [href]="item.link"
-         class="text-gray-700 hover:text-orange-600 transition-colors">
+      <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active"class="text-gray-700 hover:text-orange-600 transition-colors">
         {{ item.name }}
       </a>
+      
     </nav>
   </header>
-  

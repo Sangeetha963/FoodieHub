@@ -1,0 +1,28 @@
+.place-order-section {
+    .form-input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1rem;
+  
+      &:focus {
+        outline: none;
+        border-color: #ff7043;
+      }
+    }
+  
+    .item-card {
+      transition: transform 0.3s;
+      cursor: pointer;
+  
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+  
+    .bg-primary {
+      background-color: #ff7043;
+    }
+  }
+  

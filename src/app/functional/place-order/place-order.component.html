@@ -1,0 +1,65 @@
+<section class="place-order-section py-16 px-6 md:px-20 bg-white" motionInit>
+    <div class="text-center mb-10" motionAnimate="fadeInUp">
+      <h2 class="text-3xl font-bold text-gray-800">Place Your Order</h2>
+      <p class="text-gray-600 mt-2">Select from our bestsellers and place your order!</p>
+    </div>
+  
+    <!-- Menu Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div
+        class="flex items-center justify-between p-4 border-b border-gray-200 hover:bg-gray-50 transition"
+        *ngFor="let item of bestsellers"
+      >
+        <div class="flex items-center gap-4">
+          <img [src]="item.image" [alt]="item.title" class="h-16 w-16 object-cover rounded-md" />
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">{{ item.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ item.desc }}</p>
+          </div>
+        </div>
+        <button
+          (click)="toggleSelection(item)"
+          [ngClass]="{ 'bg-primary text-white': isSelected(item), 'bg-gray-200': !isSelected(item) }"
+          class="px-4 py-2 rounded-full text-sm transition hover:opacity-90"
+        >
+          {{ isSelected(item) ? 'Remove' : 'Add to Order' }}
+        </button>
+      </div>
+    </div>
+  
+    <!-- Order Details Form -->
+    <form (ngSubmit)="submitOrder()" *ngIf="selectedItems.length > 0" class="max-w-xl mx-auto grid gap-6">
+      <input type="text" placeholder="Your Name" [(ngModel)]="order.name" name="name" required class="form-input" />
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        [(ngModel)]="order.phone"
+        name="phone"
+        required
+        class="form-input"
+      />
+      <textarea
+        rows="4"
+        [(ngModel)]="order.notes"
+        name="notes"
+        placeholder="Additional Notes (optional)"
+        class="form-input"
+      ></textarea>
+  
+      <div class="bg-gray-100 p-4 rounded">
+        <h4 class="font-semibold mb-2">Your Selection:</h4>
+        <ul class="list-disc list-inside text-gray-700">
+          <li *ngFor="let item of selectedItems">{{ item.title }}</li>
+        </ul>
+      </div>
+  
+      <button type="submit" class="bg-primary text-white py-3 rounded-lg hover:opacity-90 transition">
+        Submit Order
+      </button>
+    </form>
+  
+    <div *ngIf="selectedItems.length === 0" class="text-center text-gray-600 mt-10">
+      <em>Please select at least one item to proceed.</em>
+    </div>
+  </section>
+  

@@ -12,6 +12,9 @@ import { MenuPreviewSectionComponent } from './functional/menu-preview-section/m
 import { IngredientsComponent } from './functional/ingredients/ingredients.component';
 import { TodaysOfferComponent } from './functional/todays-offer/todays-offer.component';
 import { OurJourneyComponent } from './functional/our-journey/our-journey.component';
+import { CommonButtonComponent } from './common/common-button/common-button.component';
+import { PlaceOrderComponent } from './functional/place-order/place-order.component';
+import { FormsModule } from '@angular/forms';  // <-- Import FormsModule here
 
 @NgModule({
   declarations: [
@@ -23,11 +26,14 @@ import { OurJourneyComponent } from './functional/our-journey/our-journey.compon
     MenuPreviewSectionComponent,
     IngredientsComponent,
     TodaysOfferComponent,
-    OurJourneyComponent
+    OurJourneyComponent,
+    CommonButtonComponent,
+    PlaceOrderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
