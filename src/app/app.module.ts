@@ -14,7 +14,10 @@ import { TodaysOfferComponent } from './functional/todays-offer/todays-offer.com
 import { OurJourneyComponent } from './functional/our-journey/our-journey.component';
 import { CommonButtonComponent } from './common/common-button/common-button.component';
 import { PlaceOrderComponent } from './functional/place-order/place-order.component';
-import { FormsModule } from '@angular/forms';  // <-- Import FormsModule here
+import { FormsModule } from '@angular/forms';
+import { MeetTheChefsComponent } from './functional/meet-the-chefs/meet-the-chefs.component';
+import { FaqsComponent } from './functional/faqs/faqs.component';
+import { EventsCateringComponent } from './functional/events-catering/events-catering.component';  // <-- Import FormsModule here
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { FormsModule } from '@angular/forms';  // <-- Import FormsModule here
     TodaysOfferComponent,
     OurJourneyComponent,
     CommonButtonComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    MeetTheChefsComponent,
+    FaqsComponent,
+    EventsCateringComponent
   ],
   imports: [
     BrowserModule,

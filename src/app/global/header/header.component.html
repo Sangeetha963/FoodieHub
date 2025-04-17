@@ -1,9 +1,40 @@
-<header class="flex justify-between items-center px-6 py-4 bg-white shadow-md">
+<header class="hidden md:flex justify-between items-center px-6 py-4 bg-white shadow-md">
+  <h1 class="text-2xl font-bold text-orange-600">FoodieHub</h1>
+  <nav id="navLinks" class="flex space-x-6">
+    <a
+      *ngFor="let item of navItems"
+      [routerLink]="item.link"
+      routerLinkActive="active"
+      class="text-gray-700 hover:text-orange-600 transition-colors"
+    >
+      {{ item.name }}
+    </a>
+  </nav>
+</header>
+
+<!-- Mobile Header (shown only below md) -->
+<header class="md:hidden px-4 py-4 bg-white shadow-md">
+  <div class="flex justify-between items-center">
     <h1 class="text-2xl font-bold text-orange-600">FoodieHub</h1>
-    <nav id="navLinks" class="flex space-x-6">
-      <a *ngFor="let item of navItems" [routerLink]="item.link" routerLinkActive="active"class="text-gray-700 hover:text-orange-600 transition-colors">
-        {{ item.name }}
-      </a>
-      
-    </nav>
-  </header>
+    <button (click)="toggleMenu()" class="text-gray-800 focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav *ngIf="menuOpen" class="mt-4 space-y-3">
+    <a
+      *ngFor="let item of navItems"
+      [routerLink]="item.link"
+      routerLinkActive="active"
+      class="block text-gray-700 hover:text-orange-600 transition-colors"
+    >
+      {{ item.name }}
+    </a>
+  </nav>
+</header>

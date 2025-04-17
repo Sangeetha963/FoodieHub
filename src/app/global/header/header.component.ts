@@ -18,4 +18,9 @@ export class HeaderComponent {
   ngOnInit(): void {
     // If needed, DOM manipulation goes here using ViewChild or Renderer2 (but usually unnecessary)
   }
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }

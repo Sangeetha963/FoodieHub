@@ -1,0 +1,17 @@
+<!-- meet-the-chefs.component.html -->
+<section class="meet-the-chefs-section py-16 px-6 md:px-20 bg-gray-50">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800">Meet the Chefs</h2>
+      <p class="text-gray-600 mt-2">The culinary artists behind your favorite dishes</p>
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div *ngFor="let chef of chefs" class="bg-white p-6 rounded-xl shadow hover:shadow-md transition-all">
+        <!-- <img [src]="chef.image" [alt]="chef.name" class="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-primary" /> -->
+        <h3 class="text-xl font-semibold text-center text-gray-800">{{ chef.name }}</h3>
+        <p class="text-center text-gray-500 mb-2">{{ chef.specialty }}</p>
+        <p class="text-sm text-center text-gray-600 italic">"{{ chef.quote }}"</p>
+      </div>
+    </div>
+  </section>
+  
