@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { animate, inView } from 'motion';
 import { Router } from '@angular/router';
 
@@ -72,7 +72,12 @@ ngOnInit() {
     }
   });
 }
+isScrolled = false;
 
+@HostListener('window:scroll', [])
+onWindowScroll() {
+  this.isScrolled = window.scrollY > 100;
+}
   loopedBestsellers = [...this.bestsellers, ...this.bestsellers];
 
   toggleAnimation() {

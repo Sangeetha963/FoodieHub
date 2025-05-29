@@ -45,9 +45,8 @@ body {
   }
 }
 
-// HERO SECTION
 .hero-scroll-wrapper {
-  height: 200vh; // Long enough to allow scrolling
+  height: 200vh;
   position: relative;
 }
 
@@ -63,9 +62,7 @@ body {
   z-index: 1;
   overflow: hidden;
 
-  &::before,
-  &::after {
-    content: "";
+  .hero-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -77,46 +74,29 @@ body {
     transition: opacity 1s ease-in-out;
   }
 
-  &::before {
-    background-image: url('/assets/hero-food.png');
-    opacity: 1;
-  }
-
-  &::after {
-    background-image: url('/assets/hero-food-alt.jpg');
-    opacity: 0;
-  }
-
-  // This selector triggers opacity change as user scrolls down
-  .scrolled &::before {
-    opacity: 0;
-  }
-
-  .scrolled &::after {
-    opacity: 1;
-  }
-
   h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     transition: color 0.6s ease-in-out;
-    color: white; // default
+    color: white;
   }
 
-  // When scrolled down (background fades), heading turns black
   .scrolled & h1 {
     color: black;
   }
+
   p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: white;
     transition: color 0.6s ease-in-out;
   }
-   .scrolled & p {
-    color: red; // change to red or any desired color
+
+  .scrolled & p {
+    color: red;
   }
 }
+
 
 
 
