@@ -4,11 +4,12 @@
 
   <ng-container *ngIf="isHomeRoute">
     <div class="hero-scroll-wrapper">
-      <section class="hero">
-        <div class="hero-content">
+      <section class="hero" motionInit>
+        <img src="assets/hero-food.png" alt="Hero Background" class="hero-background" />
+        <div motionAnimate="fadeInUp" class="hero-content">
           <h1 class="title">Delight in Every Bite</h1>
           <p class="subtitle">Fresh. Local. Made with Love.</p>
-          <app-common-button [routerLink]="['/order']">Order Now</app-common-button>
+          <app-common-button>Order Now</app-common-button>
         </div>
       </section>
     </div>
