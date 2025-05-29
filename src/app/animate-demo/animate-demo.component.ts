@@ -61,7 +61,18 @@ export class AnimateDemoComponent {
       delay: '0.4s'
     }
   ];
-  
+  // In your component.ts
+ngOnInit() {
+  window.addEventListener('scroll', () => {
+    const wrapper = document.querySelector('.hero-scroll-wrapper');
+    if (window.scrollY > 200) {
+      wrapper?.classList.add('scrolled');
+    } else {
+      wrapper?.classList.remove('scrolled');
+    }
+  });
+}
+
   loopedBestsellers = [...this.bestsellers, ...this.bestsellers];
 
   toggleAnimation() {

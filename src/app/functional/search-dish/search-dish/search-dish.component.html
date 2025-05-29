@@ -1,0 +1,17 @@
+<div class="search-container">
+    <input
+    type="text"
+    [(ngModel)]="query"
+    (input)="onSearchChange()"
+    placeholder="Search for a dish..."
+    class="search-input"
+  />
+  
+  <ul *ngIf="results.length > 0" class="results-list">
+    <li *ngFor="let item of results">{{ item }}</li>
+  </ul>
+  <p *ngIf="query.length >= 2 && results.length === 0">No results found</p>
+  
+  
+  </div>
+  

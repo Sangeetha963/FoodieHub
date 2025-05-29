@@ -17,8 +17,11 @@ import { PlaceOrderComponent } from './functional/place-order/place-order.compon
 import { FormsModule } from '@angular/forms';
 import { MeetTheChefsComponent } from './functional/meet-the-chefs/meet-the-chefs.component';
 import { FaqsComponent } from './functional/faqs/faqs.component';
-import { EventsCateringComponent } from './functional/events-catering/events-catering.component';  // <-- Import FormsModule here
-
+import { EventsCateringComponent } from './functional/events-catering/events-catering.component';
+import { AwardsRecognitionComponent } from './functional/awards-recognition/awards-recognition.component';
+import { NewsletterSubscriptionComponent } from './functional/newsletter-subscription/newsletter-subscription.component';
+import { LoyaltyProgramComponent } from './functional/loyalty-program/loyalty-program.component';
+import { SearchDishComponent } from './functional/search-dish/search-dish/search-dish.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,11 @@ import { EventsCateringComponent } from './functional/events-catering/events-cat
     PlaceOrderComponent,
     MeetTheChefsComponent,
     FaqsComponent,
-    EventsCateringComponent
+    EventsCateringComponent,
+    AwardsRecognitionComponent,
+    NewsletterSubscriptionComponent,
+    LoyaltyProgramComponent,
+    SearchDishComponent,
   ],
   imports: [
     BrowserModule,

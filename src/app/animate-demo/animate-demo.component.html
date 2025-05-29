@@ -3,14 +3,16 @@
   <app-header></app-header>
 
   <ng-container *ngIf="isHomeRoute">
-    <section class="hero" motionInit>
-      <img src="assets/hero-food.png" alt="Hero Background" class="hero-background" />
-      <div motionAnimate="fadeInUp" class="hero-content">
-        <h1 class="title">Delight in Every Bite</h1>
-        <p class="subtitle">Fresh. Local. Made with Love.</p>
-        <app-common-button>Order Now</app-common-button>
-      </div>
-    </section>
+    <div class="hero-scroll-wrapper">
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="title">Delight in Every Bite</h1>
+          <p class="subtitle">Fresh. Local. Made with Love.</p>
+          <app-common-button [routerLink]="['/order']">Order Now</app-common-button>
+        </div>
+      </section>
+    </div>
+    
     
 
     <!-- Features Section -->
@@ -30,6 +32,8 @@
     
     <!-- about chefs-->
     <app-meet-the-chefs></app-meet-the-chefs>
+    
+    <app-search-dish></app-search-dish>
 
     <!--place order-->
     <app-place-order></app-place-order>
@@ -39,7 +43,15 @@
 
     <!--Event catering-->
     <app-events-catering></app-events-catering>
+     
+    <!--Awards and Recognition-->
+    <app-awards-recognition></app-awards-recognition>
 
+    <!-- Newsletter -->
+    <app-newsletter-subscription></app-newsletter-subscription>
+
+    <!--customers loyality-->
+    <app-loyalty-program></app-loyalty-program>
     <section
       class="bg-gray-50 py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-10"
       motionInit
